@@ -21,6 +21,16 @@ public class BookValidator {
         if (name.length() > 50) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Max name length is 50 chars");
         }
+        validateNameOnDigits(name);
+    }
+
+    private static void validateNameOnDigits(String name) {
+        char[] chars = name.toCharArray();
+        for (char c : chars) {
+            if (Character.isDigit(c)) {
+                throw new NullPointerException();
+            }
+        }
     }
 
     private static void validateBookAuthor(String author) {
