@@ -10,8 +10,6 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: books
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - db-data:/var/lib/mysql
