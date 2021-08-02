@@ -1,6 +1,6 @@
 package com.books.validator;
 
-import com.books.dto.Book;
+import com.books.model.Book;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;

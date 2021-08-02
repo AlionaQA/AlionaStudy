@@ -1,35 +1,24 @@
-package com.books.dto;
+package com.books.model;
 
+import javax.persistence.*;
+import java.util.Objects;
+
+@Entity
+@Table
 public class Book {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
     private String author;
     private Float rating;
     private Integer price;
 
-    public Book() {
-    }
-
-    public Book(int id, String name, String author, Float rating, Integer price) {
-        this.id = id;
-        this.name = name;
-        this.author = author;
-        this.rating = rating;
-        this.price = price;
-    }
-
-    public void update(Book book) {
-        this.author = book.getAuthor();
-        this.name = book.getName();
-        this.rating = book.getRating();
-        this.price = book.getPrice();
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -63,5 +52,18 @@ public class Book {
 
     public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(id, book.id) && Objects.equals(name, book.name) && Objects.equals(author, book.author) && Objects.equals(rating, book.rating) && Objects.equals(price, book.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, author, rating, price);
     }
 }
