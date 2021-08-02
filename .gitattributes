@@ -1,3 +1,4 @@
 Dockerfile  eol=lf
 *.sh        eol=lf
 *.bat       eol=crlf
+mvnw        eol=lf
