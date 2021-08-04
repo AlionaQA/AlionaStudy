@@ -1,11 +1,11 @@
-###This project was written for understanding and doing testing of next:
+### This project was written for understanding and doing testing of next:
 1. RestAPI 
 2. SQL
 3. Git
 4. GitHub
 5. Docker
 
-###User roles:
+### User roles:
 1. **USER_ROLE** - allow get/post/put
 2. **ADMIN_ROLE** - allow get/post/put/delete
 
