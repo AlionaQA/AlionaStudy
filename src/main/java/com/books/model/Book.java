@@ -3,16 +3,32 @@ package com.books.model;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
+import static javax.persistence.GenerationType.SEQUENCE;
+
+@Entity(name = "Book")
 @Table
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "book_sequence", sequenceName = "book_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator = "book_sequence")
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String author;
     private Float rating;
+    @Column(nullable = false)
     private Integer price;
+
+    public Book() {
+    }
+
+    public Book(String name, String author, Float rating, Integer price) {
+        this.name = name;
+        this.author = author;
+        this.rating = rating;
+        this.price = price;
+    }
 
     public Long getId() {
         return id;
