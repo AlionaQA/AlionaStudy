@@ -27,7 +27,7 @@ services:
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres?currentSchema=books
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres?currentSchema=public
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     networks:

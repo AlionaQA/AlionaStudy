@@ -6,7 +6,7 @@ import java.util.Objects;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "Book")
-@Table
+@Table(name = "book")
 public class Book {
     @Id
     @SequenceGenerator(name = "book_sequence", sequenceName = "book_sequence", allocationSize = 1)
@@ -24,6 +24,14 @@ public class Book {
     }
 
     public Book(String name, String author, Float rating, Integer price) {
+        this.name = name;
+        this.author = author;
+        this.rating = rating;
+        this.price = price;
+    }
+
+    public Book(Long id, String name, String author, Float rating, Integer price) {
+        this.id = id;
         this.name = name;
         this.author = author;
         this.rating = rating;
